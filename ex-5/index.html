@@ -15,6 +15,16 @@
         <a href="../index.html"><button class="text-small">Voltar</button></a>
         <h1 class="mt-2">Validador de Email</h1>
         <p class="text-muted mt-1">Função de validação com retorno booleano</p>
+
+        <form class="form mt-4" id="form">
+            <label class="form-label" for="emailInput">Email:</label>
+
+            <input type="text" name="emailInput" id="emailInput" required placeholder="nome@email.com"
+                autocomplete="email">
+            <!-- ? Usando tipo texto apenas para testar, há que é impossível enviar formatos inválidos com tipo email -->
+            <p class="" id="validationStatus"></p>
+            <button type="submit">Enviar</button>
+        </form>
     </div>
     <script>
         // * Exercício 5: Validador de Email
@@ -22,6 +32,38 @@
         // ? Retorne true ou false
         // ? Teste com 3 emails diferentes
 
+        // Regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Parágrafo para mensagens
+        const statusValidacao = document.getElementById("validationStatus");
+
+        document.getElementById("form").addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            let emailInserido = document.getElementById("emailInput").value;
+            validarEmail(emailInserido)
+
+            // Remove classes anteriores e aplica a nova para criar estilos dinamcos
+            statusValidacao.classList.remove("text-success", "text-error");
+
+            if (validarEmail(emailInserido)) {
+                statusValidacao.classList.add("text-success");
+                statusValidacao.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg> Email válido`;
+            } else {
+                statusValidacao.classList.add("text-error");
+                statusValidacao.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg> Formato inválido`;
+            }
+        })
+
+
+        function validarEmail(email) {
+            return emailRegex.test(email.trim());
+        }
     </script>
 </body>
 

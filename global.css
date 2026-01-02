@@ -29,6 +29,9 @@
     --text: #1a1a1a;
     --text-muted: #555;
     --text-faint: #717171;
+    --text-error: #b00020;
+    --text-success: #007a33;
+    --text-info: #0055cc;
     --border: rgba(0, 0, 0, 0.1);
     --border-strong: rgba(0, 0, 0, 0.25);
     --link: #0055cc;
@@ -60,6 +63,9 @@
         --text: #e0e0e0;
         --text-muted: #a8a8a8;
         --text-faint: #787878;
+        --text-error: #ff3041;
+        --text-success: #4caf50;
+        --text-info: #6db3f2;
 
         /* * Bordas: mais visíveis para compensar fundo escuro */
         --border: rgba(255, 255, 255, 0.1);
@@ -79,6 +85,9 @@
     --text: #e0e0e0;
     --text-muted: #a8a8a8;
     --text-faint: #787878;
+    --text-error: #ff3041;
+    --text-success: #4caf50;
+    --text-info: #6db3f2;
     --border: rgba(255, 255, 255, 0.1);
     --border-strong: rgba(255, 255, 255, 0.25);
     --link: #6db3f2;
@@ -397,6 +406,33 @@ p {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+}
+
+.text-success {
+    color: var(--text-success);
+}
+
+.text-error {
+    color: var(--text-error);
+}
+
+.text-info {
+    color: var(--text-info);
+}
+
+.validation-success {
+    font-size: 0.875rem;
+    color: var(--text-success);
+}
+
+.validation-error {
+    font-size: 0.875rem;
+    color: var(--text-error);
+}
+
+.validation-info {
+    font-size: 0.875rem;
+    color: var(--text-info);
 }
 
 /* * Componentes - Lista de ações */

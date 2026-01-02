@@ -45,25 +45,22 @@
             gap: 0.5rem;
             padding: 0.625rem 1rem;
             border-radius: 100px;
-            background: #1a1a1a;
-            color: #fff;
+            background: var(--text);
+            color: var(--bg);
             text-decoration: none;
             font-size: 0.8125rem;
             font-weight: 500;
             letter-spacing: -0.01em;
-            transition: background 0.2s;
+            transition: opacity 0.2s;
         }
 
         .social-overlay a:hover {
-            background: #333;
+            opacity: 0.8;
         }
 
         .social-overlay a.linkedin {
             background: #0a66c2;
-        }
-
-        .social-overlay a.linkedin:hover {
-            background: #004182;
+            color: #fff;
         }
 
         .social-overlay svg {
