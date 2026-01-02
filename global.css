@@ -17,17 +17,110 @@
 :root {
     --font-sans: "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
     --font-mono: "SF Mono", "Fira Code", "Consolas", monospace;
+
+    /* * Color scheme - informa o navegador sobre os temas suportados */
+    color-scheme: light dark;
 }
 
-/* * Cores - paleta neutra */
+/* * Cores - paleta neutra (light mode) */
 :root {
     --bg: #f7f7f7;
     --bg-alt: #fff;
     --text: #1a1a1a;
-    --text-muted: #666;
-    --text-faint: #999;
-    --border: rgba(0, 0, 0, 0.08);
+    --text-muted: #555;
+    --text-faint: #717171;
+    --border: rgba(0, 0, 0, 0.1);
     --border-strong: rgba(0, 0, 0, 0.25);
+    --link: #0055cc;
+}
+
+/* 
+ * Cores - dark mode
+ * 
+ * Boas práticas WCAG 2.1 (nível AA):
+ * - Contraste mínimo texto normal: 4.5:1
+ * - Contraste mínimo texto grande (18pt+): 3:1
+ * - Evitar branco puro (#fff) em fundo escuro (causa fadiga ocular)
+ * - Usar tons de cinza claro em vez de branco absoluto
+ * 
+ * Referências:
+ * - https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html
+ * - https://web.dev/articles/color-scheme
+ * - https://www.nngroup.com/articles/dark-mode/
+ */
+
+/* * Dark mode via preferência do sistema */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        /* * Fundo: cinza escuro em vez de preto puro (reduz contraste extremo) */
+        --bg: #1a1a1a;
+        --bg-alt: #242424;
+
+        /* * Texto: cinza claro em vez de branco puro (reduz fadiga ocular) */
+        --text: #e0e0e0;
+        --text-muted: #a8a8a8;
+        --text-faint: #787878;
+
+        /* * Bordas: mais visíveis para compensar fundo escuro */
+        --border: rgba(255, 255, 255, 0.1);
+        --border-strong: rgba(255, 255, 255, 0.25);
+
+        /* * Links: azul mais claro para contraste adequado em fundo escuro */
+        --link: #6db3f2;
+
+        color-scheme: dark;
+    }
+}
+
+/* * Dark mode via toggle manual */
+:root[data-theme="dark"] {
+    --bg: #1a1a1a;
+    --bg-alt: #242424;
+    --text: #e0e0e0;
+    --text-muted: #a8a8a8;
+    --text-faint: #787878;
+    --border: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.25);
+    --link: #6db3f2;
+
+    color-scheme: dark;
+}
+
+/* * Ajustes específicos para dark mode (ambos os casos) */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) code {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    :root:not([data-theme="light"]) .tag {
+        background: #2e2e2e;
+        color: var(--text-muted);
+    }
+
+    :root:not([data-theme="light"]) input[type="text"],
+    :root:not([data-theme="light"]) input[type="email"],
+    :root:not([data-theme="light"]) input[type="number"],
+    :root:not([data-theme="light"]) textarea,
+    :root:not([data-theme="light"]) select {
+        border-color: var(--border-strong);
+    }
+}
+
+:root[data-theme="dark"] code {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .tag {
+    background: #2e2e2e;
+    color: var(--text-muted);
+}
+
+:root[data-theme="dark"] input[type="text"],
+:root[data-theme="dark"] input[type="email"],
+:root[data-theme="dark"] input[type="number"],
+:root[data-theme="dark"] textarea,
+:root[data-theme="dark"] select {
+    border-color: var(--border-strong);
 }
 
 /* * Corpo */
@@ -51,7 +144,7 @@ body {
 
 /* * Links */
 a {
-    color: inherit;
+    color: var(--link, inherit);
     text-decoration: underline;
     text-underline-offset: 2px;
 }
@@ -383,4 +476,68 @@ p {
     padding: 1rem 0;
     color: var(--text-faint);
     font-size: 0.875rem;
+}
+
+/* * Componentes - Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid var(--border);
+    background: var(--bg-alt);
+    color: var(--text-muted);
+    cursor: pointer;
+    z-index: 100;
+}
+
+.theme-toggle:hover {
+    border-color: var(--border-strong);
+    color: var(--text);
+}
+
+.theme-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* * Ícones: mostrar apenas o relevante */
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+.theme-toggle .icon-moon {
+    display: block;
+}
+
+/* * Dark mode: trocar ícones */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun {
+        display: block;
+    }
+
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon {
+        display: none;
+    }
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+    display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+    display: none;
+}
+
+:root[data-theme="light"] .theme-toggle .icon-sun {
+    display: none;
+}
+
+:root[data-theme="light"] .theme-toggle .icon-moon {
+    display: block;
 }
