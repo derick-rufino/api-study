@@ -4,7 +4,7 @@
  ! Gerado por IA
  */
 
-/* // * Reset básico */
+/* * Reset básico */
 *,
 *::before,
 *::after {
@@ -13,13 +13,13 @@
     padding: 0;
 }
 
-/* // * Tipografia */
+/* * Tipografia */
 :root {
     --font-sans: "SF Pro Display", "Segoe UI", system-ui, -apple-system, sans-serif;
     --font-mono: "SF Mono", "Fira Code", "Consolas", monospace;
 }
 
-/* // * Cores - paleta neutra */
+/* * Cores - paleta neutra */
 :root {
     --bg: #f7f7f7;
     --bg-alt: #fff;
@@ -30,7 +30,7 @@
     --border-strong: rgba(0, 0, 0, 0.25);
 }
 
-/* // * Corpo */
+/* * Corpo */
 body {
     font-family: var(--font-sans);
     font-size: 16px;
@@ -39,9 +39,17 @@ body {
     background: var(--bg);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--border-strong);
+    }
 }
 
-/* // * Links */
+/* * Links */
 a {
     color: inherit;
     text-decoration: underline;
@@ -52,7 +60,7 @@ a:hover {
     text-decoration: none;
 }
 
-/* // * Títulos */
+/* * Títulos */
 h1,
 h2,
 h3,
@@ -78,7 +86,7 @@ h4 {
     font-size: 1rem;
 }
 
-/* // * Código */
+/* * Código */
 code,
 pre {
     font-family: var(--font-mono);
@@ -102,7 +110,7 @@ pre code {
     padding: 0;
 }
 
-/* // * Formulários */
+/* * Formulários */
 input,
 textarea,
 select,
@@ -114,12 +122,18 @@ button {
 input[type="text"],
 input[type="email"],
 input[type="number"],
-textarea {
+textarea,
+select {
     display: block;
     width: 100%;
     padding: 0.5rem 0.75rem;
     border: 1px solid var(--border-strong);
     background: var(--bg-alt);
+}
+
+select {
+    min-width: 20dvw;
+    width: 400px;
 }
 
 input:focus,
@@ -140,7 +154,7 @@ button:hover {
     opacity: 0.85;
 }
 
-/* // * Utilitários */
+/* * Utilitários */
 .container {
     max-width: 1080px;
     margin: 0 auto;
@@ -205,7 +219,7 @@ p {
     margin-bottom: 2rem;
 }
 
-/* // * Componentes - Card */
+/* * Componentes - Card */
 .card {
     display: flex;
     flex-direction: column;
@@ -265,7 +279,7 @@ p {
     letter-spacing: 0.04em;
 }
 
-/* // * Componentes - Form */
+/* * Componentes - Form */
 .form {
     display: flex;
     flex-direction: column;
@@ -321,7 +335,7 @@ p {
     width: 100%;
 }
 
-/* // * Componentes - Lista de produtos/carrinho */
+/* * Componentes - Lista de produtos/carrinho */
 .product-list {
     display: flex;
     flex-direction: column;
