@@ -15,7 +15,71 @@
         <a href="../index.html"><button class="text-small">Voltar</button></a>
         <h1 class="mt-2">Gerador de Senhas</h1>
         <p class="text-muted mt-1">Função com parâmetros e caracteres aleatórios</p>
+
+        <div class="card mt-4">
+            <!-- * Área de exibição da senha -->
+            <div class="password-display">
+                <code id="senhaGerada" class="password-output">Clique em gerar</code>
+                <button id="copiarSenha" class="btn-icon" title="Copiar senha">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+                        <path
+                            d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- * Configurações da senha -->
+            <form class="form mt-3" id="specsSenha">
+                <!-- ? Slider de quantidade -->
+                <div class="form-group">
+                    <div class="range-header">
+                        <label class="form-label" for="quantidadeChar">Caracteres</label>
+                        <output id="quantidadeOutput" class="range-value">16</output>
+                    </div>
+                    <input type="range" name="quantidadeChar" id="quantidadeChar" min="4" max="64" value="16">
+                </div>
+
+                <!-- ? Checkboxes de opções -->
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="contemMaiuscula" id="contemMaiuscula" checked>
+                        <span class="checkbox-custom"></span>
+                        <span>Maiúsculas</span>
+                        <code class="text-faint">A-Z</code>
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="contemMinuscula" id="contemMinuscula" checked>
+                        <span class="checkbox-custom"></span>
+                        <span>Minúsculas</span>
+                        <code class="text-faint">a-z</code>
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="contemNumeros" id="contemNumeros" checked>
+                        <span class="checkbox-custom"></span>
+                        <span>Números</span>
+                        <code class="text-faint">0-9</code>
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="contemSimbolos" id="contemSimbolos">
+                        <span class="checkbox-custom"></span>
+                        <span>Símbolos</span>
+                        <code class="text-faint">!@#$</code>
+                    </label>
+
+                    <p id="mensagemErro" class="validation-error mt-1 hidden"></p>
+                </div>
+
+                <button type="submit" class="mt-2">Gerar Senha</button>
+            </form>
+        </div>
     </div>
+    <script src="../utils/copyToClipboard.js"></script>
     <script src="script.js"></script>
 </body>
 

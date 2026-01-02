@@ -42,7 +42,8 @@
             event.preventDefault();
 
             let emailInserido = document.getElementById("emailInput").value;
-            validarEmail(emailInserido)
+            validarEmail(emailInserido);
+            console.log(validarEmail(emailInserido));
 
             // Remove classes anteriores e aplica a nova para criar estilos dinamcos
             statusValidacao.classList.remove("text-success", "text-error");
