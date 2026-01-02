@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras Inteligente</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+
+<body>
+    <div class="container">
+        <a href="../index.html"><button class="text-small">Voltar</button></a>
+        <h1 class="mt-2">Lista de Compras Inteligente</h1>
+        <p class="text-muted mt-1">Array methods: map, filter, reduce</p>
+        <div class="card mt-4">
+            <p class="text-muted text-small mb-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                </svg>
+                Use os botões para manipular o array usando as funções ao lado</p>
+
+            <div class="action-list">
+                <div class="action-item">
+                    <button id="addDiscount">adicionar desconto 10%</button>
+                    <span class="action-badge">.map()</span>
+                </div>
+                <div class="action-item">
+                    <button id="filterCheap">mostrar abaixo de R$50</button>
+                    <span class="action-badge">.filter()</span>
+                </div>
+                <div class="action-item">
+                    <button id="calcTotal">calcular total</button>
+                    <span class="action-badge">.reduce()</span>
+                </div>
+            </div>
+        </div>
+        <div class="card mt-4">
+            <h2 class="mb-2">Carrinho</h2>
+            <div class="product-list" id="productList">
+                <!-- ? Estrutura de exemplo (remova ou use como referência)
+                <div class="product-item">
+                    <span class="product-name">Nome do produto</span>
+                    <span class="product-price">R$ 0,00</span>
+                </div>
+                <div class="product-item">
+                    <span class="product-name">Produto com desconto</span>
+                    <span>
+                        <span class="product-price-old">R$ 100,00</span>
+                        <span class="product-price">R$ 90,00</span>
+                    </span>
+                </div>
+                -->
+                <p class="product-empty">Nenhum produto no carrinho</p>
+            </div>
+            <div class="product-total" id="product-total-container">
+                <span>Total</span>
+                <span id="productTotal">R$ 0,00</span>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
