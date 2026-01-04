@@ -236,6 +236,7 @@ select {
 select {
     min-width: 20dvw;
     width: 400px;
+    max-width: 100dvw;
 }
 
 input:focus,
