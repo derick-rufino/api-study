@@ -142,11 +142,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    @media (max-width: 720px) {
-            padding: 2rem 1rem 6rem 1rem;
-    
-        }
-
     &::-webkit-scrollbar {
         width: 8px;
     }
@@ -277,6 +272,11 @@ button:disabled:hover {
     max-width: 1080px;
     margin: 0 auto;
     padding: 2rem;
+
+    @media (max-width: 720px) {
+            padding: 2rem 1.5rem;
+    
+        }
 }
 
 .hidden {
