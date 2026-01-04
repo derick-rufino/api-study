@@ -71,7 +71,7 @@
         </div>
     </div>
     <script type="module">
-        import converterParaMoeda from "../utils/converterMoeda.js"; // importando o conversor
+        import formatarParaMoeda from "../utils/formatarMoeda.js"; // importando o conversor
 
         // Crie uma função que recebe o salário mensal
         const form = document.getElementById("form").addEventListener("submit", handleSubmit);
@@ -88,10 +88,10 @@
         // Retorne um objeto com os valores calculados
         function calcularGastos(salario) {
             return {
-                aluguel: converterParaMoeda(((salario * 0.30))),
-                comida: converterParaMoeda((salario * 0.20)),
-                economia: converterParaMoeda((salario * 0.10)),
-                restante: converterParaMoeda((salario * 0.40))
+                aluguel: formatarParaMoeda(((salario * 0.30))),
+                comida: formatarParaMoeda((salario * 0.20)),
+                economia: formatarParaMoeda((salario * 0.10)),
+                restante: formatarParaMoeda((salario * 0.40))
 
             }
         }

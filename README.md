@@ -23,7 +23,7 @@ api-study/
 ├── global.css          # Sistema de design
 ├── guia-exercicios.md  # Roteiro completo de estudos
 ├── utils/              # Funções utilitárias
-│   └── converterMoeda.js
+│   └── formatarMoeda.js
 ├── ex-1/               # Cartão de Visita Digital
 ├── ex-2/               # Calculadora de Orçamento
 ├── ex-3/               # Lista de Compras (map, filter, reduce)

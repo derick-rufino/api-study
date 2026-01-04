@@ -274,9 +274,9 @@ button:disabled:hover {
     padding: 2rem;
 
     @media (max-width: 720px) {
-            padding: 2rem 1.5rem;
-    
-        }
+        padding: 2rem 1.5rem;
+
+    }
 }
 
 .hidden {

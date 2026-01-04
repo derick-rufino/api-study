@@ -4,7 +4,7 @@
 // ? Use .filter() para mostrar apenas produtos abaixo de R$50
 // ? Use .reduce() para calcular o total
 
-import converterParaMoeda from "../utils/converterMoeda.js";
+import formatarParaMoeda from "../utils/formatarMoeda.js";
 
 const produtos = [
   // Array original de produtos
@@ -27,7 +27,7 @@ function renderizarProdutos(produtos) {
       ) =>
         `<div class="product-item">
             <span class="product-name">${produto.nome}</span>
-            <span class="product-price">${converterParaMoeda(
+            <span class="product-price">${formatarParaMoeda(
               produto.preco
             )}</span>
             </div>`
@@ -72,7 +72,7 @@ function calcularTotal() {
 
 function exibirTotal() {
   document.getElementById("product-total-container").style.display = "flex";
-  document.getElementById("productTotal").innerText = converterParaMoeda(
+  document.getElementById("productTotal").innerText = formatarParaMoeda(
     calcularTotal()
   );
 }
