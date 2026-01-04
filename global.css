@@ -142,6 +142,11 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
+    @media (max-width: 720px) {
+            padding: 2rem 1rem 6rem 1rem;
+    
+        }
+
     &::-webkit-scrollbar {
         width: 8px;
     }
@@ -235,8 +240,8 @@ select {
 
 select {
     min-width: 20dvw;
-    width: 400px;
-    max-width: 100dvw;
+    width: 350px;
+    max-width: 85dvw;
 }
 
 input:focus,

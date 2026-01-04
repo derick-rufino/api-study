@@ -1,0 +1,227 @@
+/* 
+ * index.css
+ * Estilos específicos para a página inicial
+ */
+
+/* * Layout da página */
+body {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+
+    @media (max-width: 720px) {
+        padding: 2rem 1rem 6rem 1rem;
+
+    }
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+/* * Seções - Container */
+.section-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.section-card {
+    border: 1px solid var(--border);
+    background: var(--bg-alt);
+}
+
+/* * Seções - Header */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s ease;
+}
+
+.section-header:hover {
+    background: var(--bg);
+}
+
+.section-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--text);
+    color: var(--bg-alt);
+    font-size: 0.875rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.section-info {
+    flex: 1;
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.section-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* * Seções - Meta info */
+.section-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-count {
+    font-size: 0.75rem;
+    color: var(--text-faint);
+    padding: 0.25rem 0.5rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.section-toggle {
+    width: 24px;
+    height: 24px;
+    color: var(--text-muted);
+    transition: transform 0.2s ease;
+}
+
+.section-card.open .section-toggle {
+    transform: rotate(180deg);
+}
+
+/* * Exercícios - Grid */
+.exercises-grid {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    padding: 0 1.25rem 1.25rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1.25rem;
+}
+
+.section-card.open .exercises-grid {
+    display: grid;
+}
+
+/* * Exercícios - Card */
+.exercise-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    min-height: 120px;
+}
+
+.exercise-card:hover {
+    border-color: var(--border-strong);
+}
+
+.exercise-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.exercise-number {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-faint);
+    font-variant-numeric: tabular-nums;
+}
+
+.exercise-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.exercise-desc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    flex: 1;
+    margin: 0;
+}
+
+.exercise-tags {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+}
+
+.exercise-tags .tag {
+    font-size: 0.55rem;
+    padding: 0.2rem 0.4rem;
+}
+
+/* * Status de progresso */
+.progress-bar {
+    height: 3px;
+    background: var(--border);
+    margin-top: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--text-success);
+    transition: width 0.3s ease;
+}
+
+/* * Social overlay */
+.social-overlay {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.social-overlay a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    border-radius: 100px;
+    background: var(--text);
+    color: var(--bg);
+    text-decoration: none;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: opacity 0.2s;
+}
+
+.social-overlay a:hover {
+    opacity: 0.8;
+}
+
+.social-overlay a.linkedin {
+    background: #0a66c2;
+    color: #fff;
+}
+
+.social-overlay svg {
+    width: 16px;
+    height: 16px;
+}

@@ -7,67 +7,8 @@
     <meta name="color-scheme" content="light dark">
     <title>Estudo de API</title>
     <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="index.css">
     <script src="utils/theme.js"></script>
-    <style>
-        body {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        h1 {
-            margin-bottom: 2.5rem;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 1.25rem;
-        }
-
-        .card {
-            min-height: 160px;
-        }
-
-        .social-overlay {
-            position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .social-overlay a {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.625rem 1rem;
-            border-radius: 100px;
-            background: var(--text);
-            color: var(--bg);
-            text-decoration: none;
-            font-size: 0.8125rem;
-            font-weight: 500;
-            letter-spacing: -0.01em;
-            transition: opacity 0.2s;
-        }
-
-        .social-overlay a:hover {
-            opacity: 0.8;
-        }
-
-        .social-overlay a.linkedin {
-            background: #0a66c2;
-            color: #fff;
-        }
-
-        .social-overlay svg {
-            width: 16px;
-            height: 16px;
-        }
-    </style>
 </head>
 
 <body>
@@ -91,145 +32,278 @@
     </button>
 
     <h1>Estudo de API</h1>
+    <p class="subtitle">Roteiro progressivo: do JavaScript ao Deploy</p>
 
-    <nav>
-        <ul>
-            <li>
-                <a href="ex-1/index.html" class="card">
-                    <div class="card-header">
-                        <span class="card-number">01</span>
-                        <span class="card-title">Cartão de Visita Digital</span>
+    <main class="section-list">
+        <!-- * Seção 1: Fundamentos de JavaScript -->
+        <article class="section-card open">
+            <header class="section-header" onclick="toggleSection(this)">
+                <span class="section-number">1</span>
+                <div class="section-info">
+                    <h2 class="section-title">Fundamentos de JavaScript</h2>
+                    <p class="section-desc">Sintaxe, arrays, objetos, funções e async</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;"></div>
                     </div>
-                    <p class="card-desc">Variáveis, const/let e template strings</p>
-                    <div class="card-tags">
+                </div>
+                <div class="section-meta">
+                    <span class="section-count">10 exercícios</span>
+                    <svg class="section-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </header>
+            <div class="exercises-grid">
+                <a href="ex-1/index.html" class="exercise-card">
+                    <div class="exercise-header">
+                        <span class="exercise-number">01</span>
+                        <span class="exercise-title">Cartão de Visita Digital</span>
+                    </div>
+                    <p class="exercise-desc">Variáveis, const/let e template strings</p>
+                    <div class="exercise-tags">
                         <span class="tag">variáveis</span>
                         <span class="tag">template string</span>
                     </div>
                 </a>
-            </li>
-            <li>
-                <a href="ex-2/index.html" class="card">
-                    <div class="card-header">
-                        <span class="card-number">02</span>
-                        <span class="card-title">Calculadora de Orçamento</span>
+                <a href="ex-2/index.html" class="exercise-card">
+                    <div class="exercise-header">
+                        <span class="exercise-number">02</span>
+                        <span class="exercise-title">Calculadora de Orçamento</span>
                     </div>
-                    <p class="card-desc">Funções que retornam objetos JSON</p>
-                    <div class="card-tags">
+                    <p class="exercise-desc">Funções que retornam objetos JSON</p>
+                    <div class="exercise-tags">
                         <span class="tag">função</span>
                         <span class="tag">objeto</span>
                     </div>
                 </a>
-            </li>
-            <li>
-                <a href="ex-3/index.html" class="card">
-                    <div class="card-header">
-                        <span class="card-number">03</span>
-                        <span class="card-title">Lista de Compras Inteligente</span>
+                <a href="ex-3/index.html" class="exercise-card">
+                    <div class="exercise-header">
+                        <span class="exercise-number">03</span>
+                        <span class="exercise-title">Lista de Compras</span>
                     </div>
-                    <p class="card-desc">Array methods: map, filter, reduce</p>
-                    <div class="card-tags">
+                    <p class="exercise-desc">Array methods: map, filter, reduce</p>
+                    <div class="exercise-tags">
                         <span class="tag">array</span>
                         <span class="tag">map</span>
                         <span class="tag">filter</span>
-                        <span class="tag">reduce</span>
                     </div>
                 </a>
-            </li>
-            <li>
-                <a href="ex-4/index.html" class="card">
-                    <div class="card-header">
-                        <span class="card-number">04</span>
-                        <span class="card-title">Catálogo de Filmes</span>
+                <a href="ex-4/index.html" class="exercise-card">
+                    <div class="exercise-header">
+                        <span class="exercise-number">04</span>
+                        <span class="exercise-title">Catálogo de Filmes</span>
                     </div>
-                    <p class="card-desc">Filtrar, ordenar e buscar em arrays</p>
-                    <div class="card-tags">
+                    <p class="exercise-desc">Filtrar, ordenar e buscar em arrays</p>
+                    <div class="exercise-tags">
                         <span class="tag">objeto</span>
-                        <span class="tag">array</span>
                         <span class="tag">filtro</span>
                     </div>
                 </a>
-            </li>
-            <li>
-                <a href="ex-5/index.html" class="card">
-                    <div class="card-header">
-                        <span class="card-number">05</span>
-                        <span class="card-title">Validador de Email</span>
+                <a href="ex-5/index.html" class="exercise-card">
+                    <div class="exercise-header">
+                        <span class="exercise-number">05</span>
+                        <span class="exercise-title">Validador de Email</span>
                     </div>
-                    <p class="card-desc">Função de validação com retorno booleano</p>
-                    <div class="card-tags">
+                    <p class="exercise-desc">Validação com retorno booleano</p>
+                    <div class="exercise-tags">
                         <span class="tag">função</span>
                         <span class="tag">validação</span>
                     </div>
                 </a>
-            </li>
-            <li>
-                <a href="ex-6/index.html" class="card">
-                    <div class="card-header">
-                        <span class="card-number">06</span>
-                        <span class="card-title">Gerador de Senhas</span>
+                <a href="ex-6/index.html" class="exercise-card">
+                    <div class="exercise-header">
+                        <span class="exercise-number">06</span>
+                        <span class="exercise-title">Gerador de Senhas</span>
                     </div>
-                    <p class="card-desc">Função com parâmetros e caracteres aleatórios</p>
-                    <div class="card-tags">
+                    <p class="exercise-desc">Parâmetros e caracteres aleatórios</p>
+                    <div class="exercise-tags">
                         <span class="tag">função</span>
                         <span class="tag">math.random</span>
                     </div>
                 </a>
-            </li>
-            <li>
-                <a href="ex-7/index.html" class="card">
-                    <div class="card-header">
-                        <span class="card-number">07</span>
-                        <span class="card-title">Temporizador Simples</span>
+                <a href="ex-7/index.html" class="exercise-card">
+                    <div class="exercise-header">
+                        <span class="exercise-number">07</span>
+                        <span class="exercise-title">Temporizador Simples</span>
                     </div>
-                    <p class="card-desc">setTimeout e simulação de carregamento</p>
-                    <div class="card-tags">
+                    <p class="exercise-desc">setTimeout e carregamento</p>
+                    <div class="exercise-tags">
                         <span class="tag">setTimeout</span>
                         <span class="tag">assíncrono</span>
                     </div>
                 </a>
-            </li>
-            <li>
-                <a href="ex-8/index.html" class="card">
-                    <div class="card-header">
-                        <span class="card-number">08</span>
-                        <span class="card-title">Buscador de Piadas</span>
+                <a href="ex-8/index.html" class="exercise-card">
+                    <div class="exercise-header">
+                        <span class="exercise-number">08</span>
+                        <span class="exercise-title">Buscador de Piadas</span>
                     </div>
-                    <p class="card-desc">Fetch API com async/await</p>
-                    <div class="card-tags">
+                    <p class="exercise-desc">Fetch API com async/await</p>
+                    <div class="exercise-tags">
                         <span class="tag">fetch</span>
-                        <span class="tag">async/await</span>
                         <span class="tag">api</span>
                     </div>
                 </a>
-            </li>
-            <li>
-                <a href="ex-9/index.html" class="card">
-                    <div class="card-header">
-                        <span class="card-number">09</span>
-                        <span class="card-title">Múltiplas Requisições</span>
+                <a href="ex-9/index.html" class="exercise-card">
+                    <div class="exercise-header">
+                        <span class="exercise-number">09</span>
+                        <span class="exercise-title">Múltiplas Requisições</span>
                     </div>
-                    <p class="card-desc">Promise.all para requisições paralelas</p>
-                    <div class="card-tags">
+                    <p class="exercise-desc">Promise.all paralelo</p>
+                    <div class="exercise-tags">
                         <span class="tag">promise.all</span>
                         <span class="tag">fetch</span>
                     </div>
                 </a>
-            </li>
-            <li>
-                <a href="ex-10/index.html" class="card">
-                    <div class="card-header">
-                        <span class="card-number">10</span>
-                        <span class="card-title">Biblioteca de Utilidades</span>
+                <a href="ex-10/index.html" class="exercise-card">
+                    <div class="exercise-header">
+                        <span class="exercise-number">10</span>
+                        <span class="exercise-title">Biblioteca de Utilidades</span>
                     </div>
-                    <p class="card-desc">Módulos: importar e exportar funções</p>
-                    <div class="card-tags">
+                    <p class="exercise-desc">Módulos: import/export</p>
+                    <div class="exercise-tags">
                         <span class="tag">módulos</span>
                         <span class="tag">node.js</span>
                     </div>
                 </a>
-            </li>
-        </ul>
-    </nav>
+            </div>
+        </article>
+
+        <!-- * Seção 1.2: Estruturas de Controle -->
+        <article class="section-card">
+            <header class="section-header" onclick="toggleSection(this)">
+                <span class="section-number">1.2</span>
+                <div class="section-info">
+                    <h2 class="section-title">Estruturas de Controle</h2>
+                    <p class="section-desc">if/else, switch, loops e combinações</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="section-meta">
+                    <span class="section-count">13 exercícios</span>
+                    <svg class="section-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </header>
+            <div class="exercises-grid">
+                <div class="exercise-card" style="opacity: 0.5; pointer-events: none;">
+                    <div class="exercise-header">
+                        <span class="exercise-number">11</span>
+                        <span class="exercise-title">Sistema de Notas</span>
+                    </div>
+                    <p class="exercise-desc">Condicionais if/else</p>
+                    <div class="exercise-tags">
+                        <span class="tag">em breve</span>
+                    </div>
+                </div>
+                <!-- ? Mais exercícios serão adicionados aqui -->
+            </div>
+        </article>
+
+        <!-- * Seção 2: Node.js -->
+        <article class="section-card">
+            <header class="section-header" onclick="toggleSection(this)">
+                <span class="section-number">2</span>
+                <div class="section-info">
+                    <h2 class="section-title">Ambiente Backend (Node.js)</h2>
+                    <p class="section-desc">NPM, módulos nativos e primeiro servidor</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="section-meta">
+                    <span class="section-count">8 exercícios</span>
+                    <svg class="section-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </header>
+            <div class="exercises-grid">
+                <div class="exercise-card" style="opacity: 0.5; pointer-events: none;">
+                    <div class="exercise-header">
+                        <span class="exercise-number">24</span>
+                        <span class="exercise-title">Hello World Node</span>
+                    </div>
+                    <p class="exercise-desc">Primeiro script backend</p>
+                    <div class="exercise-tags">
+                        <span class="tag">em breve</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- * Seção 3: HTTP e APIs -->
+        <article class="section-card">
+            <header class="section-header" onclick="toggleSection(this)">
+                <span class="section-number">3</span>
+                <div class="section-info">
+                    <h2 class="section-title">HTTP e Conceitos de APIs</h2>
+                    <p class="section-desc">Requisições, status codes e JSON</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="section-meta">
+                    <span class="section-count">6 exercícios</span>
+                    <svg class="section-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </header>
+            <div class="exercises-grid">
+                <div class="exercise-card" style="opacity: 0.5; pointer-events: none;">
+                    <div class="exercise-header">
+                        <span class="exercise-number">32</span>
+                        <span class="exercise-title">Explorador de APIs</span>
+                    </div>
+                    <p class="exercise-desc">Usando Postman</p>
+                    <div class="exercise-tags">
+                        <span class="tag">em breve</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- * Seção 4: Express.js -->
+        <article class="section-card">
+            <header class="section-header" onclick="toggleSection(this)">
+                <span class="section-number">4</span>
+                <div class="section-info">
+                    <h2 class="section-title">Express.js - Framework Web</h2>
+                    <p class="section-desc">Rotas, middleware e CRUD</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="section-meta">
+                    <span class="section-count">8 exercícios</span>
+                    <svg class="section-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </header>
+            <div class="exercises-grid">
+                <div class="exercise-card" style="opacity: 0.5; pointer-events: none;">
+                    <div class="exercise-header">
+                        <span class="exercise-number">38</span>
+                        <span class="exercise-title">Seu Primeiro Express</span>
+                    </div>
+                    <p class="exercise-desc">Servidor básico</p>
+                    <div class="exercise-tags">
+                        <span class="tag">em breve</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- * Seções 5-8 seguem o mesmo padrão -->
+    </main>
 
     <div class="social-overlay">
         <a href="https://linkedin.com/in/derick-rufino" target="_blank" rel="noopener noreferrer" class="linkedin">
@@ -247,6 +321,45 @@
             GitHub
         </a>
     </div>
+
+    <script>
+        // ? Função para expandir/colapsar seções
+        function toggleSection(header) {
+            const card = header.closest('.section-card');
+            card.classList.toggle('open');
+
+            // ? Salvar estado no localStorage
+            const sectionId = card.querySelector('.section-number').textContent;
+            const openSections = JSON.parse(localStorage.getItem('openSections') || '["1"]');
+
+            if (card.classList.contains('open')) {
+                if (!openSections.includes(sectionId)) {
+                    openSections.push(sectionId);
+                }
+            } else {
+                const index = openSections.indexOf(sectionId);
+                if (index > -1) {
+                    openSections.splice(index, 1);
+                }
+            }
+
+            localStorage.setItem('openSections', JSON.stringify(openSections));
+        }
+
+        // ? Restaurar estado ao carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            const openSections = JSON.parse(localStorage.getItem('openSections') || '["1"]');
+
+            document.querySelectorAll('.section-card').forEach(card => {
+                const sectionId = card.querySelector('.section-number').textContent;
+                if (openSections.includes(sectionId)) {
+                    card.classList.add('open');
+                } else {
+                    card.classList.remove('open');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
