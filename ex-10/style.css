@@ -1,0 +1,116 @@
+/* 
+ * style.css - Exercício 10: Biblioteca de Utilidades
+ * Cards de utilidades - design minimalista
+ */
+
+/* * Grid de Cards */
+.utils-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+/* * Card de Utilidade */
+.util-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.util-card .card-desc {
+    margin-bottom: 0;
+}
+
+.util-form {
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.util-form .form-group {
+    margin-bottom: 0.75rem;
+}
+
+/* * Layout de formulário em linha */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-row .form-group {
+    margin-bottom: 0;
+}
+
+.form-row select {
+    width: 100%;
+    min-width: unset;
+}
+
+/* * Caixa de Resultado */
+.result-box {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-wrap: anywhere;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    max-width: 100%;
+}
+
+.result-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.result-value {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+/* * Estados de validação */
+.result-value.success {
+    color: var(--text-success);
+}
+
+.result-value.error {
+    color: var(--text-error);
+}
+
+.result-value.info {
+    color: var(--text-info);
+}
+
+/* * Input de data */
+input[type="date"] {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border-strong);
+    background: var(--bg-alt);
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--text);
+}
+
+input[type="date"]:focus {
+    outline: 2px solid var(--text);
+    outline-offset: -2px;
+}
+
+/* * Responsivo */
+@media (max-width: 720px) {
+    .utils-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

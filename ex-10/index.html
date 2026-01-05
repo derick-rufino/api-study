@@ -7,6 +7,7 @@
     <meta name="color-scheme" content="light dark">
     <title>Biblioteca de Utilidades</title>
     <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="style.css">
     <script src="../utils/theme.js"></script>
 </head>
 
@@ -15,8 +16,111 @@
         <a href="../index.html"><button class="text-small">Voltar</button></a>
         <h1 class="mt-2">Biblioteca de Utilidades</h1>
         <p class="text-muted mt-1">Módulos: importar e exportar funções</p>
-        <p class="text-muted text-small mt-2">Este exercício requer Node.js - execute com <code>node app.js</code></p>
+
+        <!-- * Cards de Utilidades -->
+        <div class="utils-grid mt-4">
+            <!-- ? Card: Formatar Moeda -->
+            <div class="card util-card">
+                <div class="card-header">
+                    <span class="card-number">01</span>
+                    <h3 class="card-title">Formatar para Moeda</h3>
+                </div>
+                <p class="card-desc">Converte um número para formato de moeda brasileira</p>
+                <form class="util-form mt-2" id="formatar-moeda-form">
+                    <div class="form-group">
+                        <label class="form-label" for="input-moeda">Valor numérico</label>
+                        <input type="number" id="input-moeda" placeholder="1234.56" step="0.01">
+                    </div>
+                    <button id="btn-moeda">Formatar</button>
+                    <div class="result-box mt-2">
+                        <span class="result-label">Resultado:</span>
+                        <span class="result-value" id="result-moeda">—</span>
+                    </div>
+                </form>
+            </div>
+
+            <!-- ? Card: Converter Moeda -->
+            <div class="card util-card">
+                <div class="card-header">
+                    <span class="card-number">02</span>
+                    <h3 class="card-title">Converter Moeda</h3>
+                </div>
+                <p class="card-desc">Converte valores entre diferentes moedas</p>
+                <form class="util-form mt-2" id="converter-moeda-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="input-valor">Valor</label>
+                            <input type="number" id="input-valor" placeholder="0" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="select-de">De</label>
+                            <select id="select-de">
+                                <option value="BRL">BRL (Real)</option>
+                                <option value="USD">USD (Dólar)</option>
+                                <option value="EUR">EUR (Euro)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="select-para">Para</label>
+                            <select id="select-para">
+                                <option value="USD">USD (Dólar)</option>
+                                <option value="BRL">BRL (Real)</option>
+                                <option value="EUR">EUR (Euro)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="btn-converter">Converter</button>
+                    <div class="result-box mt-2">
+                        <span class="result-label">Resultado:</span>
+                        <span class="result-value" id="result-converter">—</span>
+                    </div>
+                </form>
+                <p class="text-error mt-2" id="erro-unidade-monetaria" style="display: none"></p>
+            </div>
+
+            <!-- ? Card: Validar CPF -->
+            <div class="card util-card">
+                <div class="card-header">
+                    <span class="card-number">03</span>
+                    <h3 class="card-title">Validar CPF</h3>
+                </div>
+                <p class="card-desc">Verifica se um CPF é válido</p>
+                <form class="util-form mt-2" id="validar-cpf-form">
+                    <div class="form-group">
+                        <label class="form-label" for="input-cpf">CPF</label>
+                        <input type="text" id="input-cpf" placeholder="000.000.000-00" maxlength="14">
+                    </div>
+                    <button id="btn-cpf">Validar</button>
+                    <div class="result-box mt-2">
+                        <span class="result-label">Status:</span>
+                        <span class="result-value" id="result-cpf">—</span>
+                    </div>
+                </form>
+            </div>
+
+            <!-- ? Card: Calcular Idade -->
+            <div class="card util-card">
+                <div class="card-header">
+                    <span class="card-number">04</span>
+                    <h3 class="card-title">Calcular Idade</h3>
+                </div>
+                <p class="card-desc">Calcula a idade a partir da data de nascimento</p>
+                <form class="util-form mt-2" id="calcular-idade-form">
+                    <div class="form-group">
+                        <label class="form-label" for="input-nascimento">Data de Nascimento</label>
+                        <input type="date" id="input-nascimento">
+                    </div>
+                    <button id="btn-idade">Calcular</button>
+                    <div class="result-box mt-2">
+                        <span class="result-label">Idade:</span>
+                        <span class="result-value" id="result-idade">—</span>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+
+    <script type="module" src="app.js"></script>
 </body>
 
 </html>
