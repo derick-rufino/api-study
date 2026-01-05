@@ -1,20 +1,35 @@
 {
   "name": "api-study",
-  "version": "1.0.0",
-  "description": "**Demo:** https://api-study-nine.vercel.app/",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "1.7.0",
+  "description": "Estudos e experimentos com APIs, JavaScript e Node.js.\n\n**Demo online:** https://api-study-nine.vercel.app/",
+  "homepage": "https://api-study-nine.vercel.app/",
+  "author": {
+    "name": "Derick Rufino",
+    "email": "derick10011@gmail.com",
+    "url": "https://github.com/derick-rufino"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/derick-rufino/api-study.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/derick-rufino/api-study/issues"
   },
-  "homepage": "https://github.com/derick-rufino/api-study#readme"
+  "keywords": [
+    "api",
+    "javascript",
+    "nodejs",
+    "estudo",
+    "exercícios",
+    "frontend",
+    "vercel"
+  ],
+  "license": "ISC",
+  "type": "commonjs",
+  "site": "https://api-study-nine.vercel.app/",
+  "contact": "derick10011@gmail.com",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "readme": "https://github.com/derick-rufino/api-study#readme"
 }
