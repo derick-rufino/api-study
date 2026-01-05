@@ -88,3 +88,13 @@ function atualizarSelect(estado) {
     moedaErrorDisplay.innerHTML = "";
   }
 }
+
+calcularIdadeForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const dataNascimentoString = inputNascimento.value; // formato string permite enviar direto do input e a propria função de utilidade dá conta da conversão
+  const idadeAtual = calcularIdade(dataNascimentoString);
+  console.log(idadeAtual);
+
+  resultIdade.textContent = `${idadeAtual} anos`;
+});

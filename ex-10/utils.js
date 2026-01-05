@@ -32,7 +32,23 @@ async function converterMoeda(valor, moedaOrigem, moedaDestino) {
 // TODO: validarCPF(cpf)
 function validarCPF(cpf) {}
 
-// TODO: calcularIdade(dataNascimento)
-function calcularIdade(dataNascimento) {}
+// * Função de utilidade: calcularIdade(dataNascimento)
+function calcularIdade(dataNascimentoString) {
+  const hoje = new Date(); // pega a data e hora atual com formato padrão
+  const dataNascimento = new Date(dataNascimentoString); // Foemata para data
+
+  let idade = hoje.getFullYear() - dataNascimento.getFullYear(); // primeiro subtrair os anos
+  const mes = hoje.getMonth() - dataNascimento.getMonth(); // Difentença entre os meses, permite calcular se já passou o aniversário ou não
+
+  // ? Checa se o aniversário da pessoa ainda não aconteceu neste ano - complicadissimo
+  if (mes < 0 || (mes === 0 && hoje.getDate() < dataNascimento.getDate())) {
+    // Se o mês atual é menor que o mês de nascimento, o aniversário ainda não chegou
+    // Se o mês é igual, mas o dia atual é menor que o dia de nascimento, o aniversário também não chegou
+    // Então precisamos subtrair 1 da idade, pois a pessoa ainda não fez aniversário este ano
+    idade--;
+  }
+
+  return idade;
+}
 
 export { converterMoeda, validarCPF, calcularIdade };
